@@ -10,13 +10,19 @@
 
 function chunk(array, size) {
   let newArr = [];
+
   while (array.length) {
     let arr = [];
+    if (array.length <= size) {
+      newArr.push(array);
+      break;
+    }
     for (let index = 0; index < size; index++) {
       arr.push(array.shift());
     }
     newArr.push(arr);
   }
+
   return newArr;
 }
 
